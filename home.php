@@ -48,8 +48,8 @@ include 'components/wishlist_cart.php';
             <img src="images/home-img-1.png" alt="">
          </div>
          <div class="content">
-            <span>upto 50% off</span>
-            <h3>latest smartphones</h3>
+            <span style="color: black;">Descubre nuestros productos</span>
+            <h3 style="color: black;">Calzado para Damas</h3>
             <a href="shop.php" class="btn">shop now</a>
          </div>
       </div>
@@ -59,8 +59,8 @@ include 'components/wishlist_cart.php';
             <img src="images/home-img-2.png" alt="">
          </div>
          <div class="content">
-            <span>upto 50% off</span>
-            <h3>latest watches</h3>
+            <span style="color: black;">Descubre nuestros productos</span>
+            <h3 style="color: black;">Calzado para Hombres</h3>
             <a href="shop.php" class="btn">shop now</a>
          </div>
       </div>
@@ -70,8 +70,8 @@ include 'components/wishlist_cart.php';
             <img src="images/home-img-3.png" alt="">
          </div>
          <div class="content">
-            <span>upto 50% off</span>
-            <h3>latest headsets</h3>
+            <span style="color: black;">Descubre nuestros productos</span>
+            <h3 style="color: black;">Calzado para niños</h3>
             <a href="shop.php" class="btn">shop now</a>
          </div>
       </div>
