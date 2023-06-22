@@ -88,7 +88,7 @@ include 'components/wishlist_cart.php';
 
 <section class="category">
 
-   <h1 class="heading">shop by category</h1>
+   <h1 class="heading">Tus marcas favoritas</h1>
 
    <div class="swiper category-slider">
 
@@ -96,43 +96,43 @@ include 'components/wishlist_cart.php';
 
    <a href="category.php?category=laptop" class="swiper-slide slide">
       <img src="images/icon-1.png" alt="">
-      <h3>laptop</h3>
+      <h3>GAP</h3>
    </a>
 
    <a href="category.php?category=tv" class="swiper-slide slide">
       <img src="images/icon-2.png" alt="">
-      <h3>tv</h3>
+      <h3>Reebok</h3>
    </a>
 
    <a href="category.php?category=camera" class="swiper-slide slide">
       <img src="images/icon-3.png" alt="">
-      <h3>camera</h3>
+      <h3>Levis</h3>
    </a>
 
    <a href="category.php?category=mouse" class="swiper-slide slide">
       <img src="images/icon-4.png" alt="">
-      <h3>mouse</h3>
+      <h3>Adidas</h3>
    </a>
 
    <a href="category.php?category=fridge" class="swiper-slide slide">
       <img src="images/icon-5.png" alt="">
-      <h3>fridge</h3>
+      <h3>Polo</h3>
    </a>
 
    <a href="category.php?category=washing" class="swiper-slide slide">
       <img src="images/icon-6.png" alt="">
-      <h3>washing machine</h3>
+      <h3>Skechers</h3>
    </a>
 
    <a href="category.php?category=smartphone" class="swiper-slide slide">
       <img src="images/icon-7.png" alt="">
-      <h3>smartphone</h3>
+      <h3>Nike</h3>
    </a>
 
-   <a href="category.php?category=watch" class="swiper-slide slide">
+   <!-- <a href="category.php?category=watch" class="swiper-slide slide">
       <img src="images/icon-8.png" alt="">
-      <h3>watch</h3>
-   </a>
+      <h3>Gap</h3>
+   </a> -->
 
    </div>
 
@@ -144,7 +144,7 @@ include 'components/wishlist_cart.php';
 
 <section class="home-products">
 
-   <h1 class="heading">latest products</h1>
+   <h1 class="heading">últimos productos</h1>
 
    <div class="swiper products-slider">
 
@@ -174,7 +174,7 @@ include 'components/wishlist_cart.php';
    <?php
       }
    }else{
-      echo '<p class="empty">no products added yet!</p>';
+      echo '<p class="empty">no hay productos añadidos todavía!</p>';
    }
    ?>
 
