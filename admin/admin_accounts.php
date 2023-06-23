@@ -25,7 +25,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>admin accounts</title>
+   <title>cuentas de administrador</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -38,13 +38,13 @@ if(isset($_GET['delete'])){
 
 <section class="accounts">
 
-   <h1 class="heading">admin accounts</h1>
+   <h1 class="heading">cuentas de administrador</h1>
 
    <div class="box-container">
 
    <div class="box">
-      <p>add new admin</p>
-      <a href="register_admin.php" class="option-btn">register admin</a>
+      <p>Agregar nuevo administrador</p>
+      <a href="register_admin.php" class="option-btn">registrar administrador</a>
    </div>
 
    <?php
@@ -55,7 +55,7 @@ if(isset($_GET['delete'])){
    ?>
    <div class="box">
       <p> admin id : <span><?= $fetch_accounts['id']; ?></span> </p>
-      <p> admin name : <span><?= $fetch_accounts['name']; ?></span> </p>
+      <p> nombre de administrador : <span><?= $fetch_accounts['name']; ?></span> </p>
       <div class="flex-btn">
          <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this account?')" class="delete-btn">delete</a>
          <?php
