@@ -50,7 +50,7 @@ include 'components/wishlist_cart.php';
          <div class="content">
             <span style="color: black;">Descubre nuestros productos</span>
             <h3 style="color: black;">Calzado para Damas</h3>
-            <a href="shop.php" class="btn">shop now</a>
+            <a href="shop.php" class="btn">Compra ahora</a>
          </div>
       </div>
 
@@ -61,7 +61,7 @@ include 'components/wishlist_cart.php';
          <div class="content">
             <span style="color: black;">Descubre nuestros productos</span>
             <h3 style="color: black;">Calzado para Hombres</h3>
-            <a href="shop.php" class="btn">shop now</a>
+            <a href="shop.php" class="btn">Compra ahora</a>
          </div>
       </div>
 
@@ -72,7 +72,7 @@ include 'components/wishlist_cart.php';
          <div class="content">
             <span style="color: black;">Descubre nuestros productos</span>
             <h3 style="color: black;">Calzado para niños</h3>
-            <a href="shop.php" class="btn">shop now</a>
+            <a href="shop.php" class="btn">Compra ahora</a>
          </div>
       </div>
 

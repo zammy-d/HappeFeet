@@ -15,14 +15,14 @@
 
    <section class="flex">
 
-      <a href="home.php" class="logo">Shopie<span>.</span></a>
+      <a href="home.php" class="logo">HappyFeet<span>.</span></a>
 
       <nav class="navbar">
-         <a href="home.php">home</a>
-         <a href="about.php">about</a>
-         <a href="orders.php">orders</a>
-         <a href="shop.php">shop</a>
-         <a href="contact.php">contact</a>
+         <a href="home.php">Inicio</a>
+         <a href="about.php">acerca de</a>
+         <a href="orders.php">pedidos</a>
+         <a href="shop.php">Compra ahora</a>
+         <a href="contact.php">contacto</a>
       </nav>
 
       <div class="icons">
