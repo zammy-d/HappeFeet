@@ -28,18 +28,18 @@ if(isset($_POST['submit'])){
    $confirm_pass = filter_var($confirm_pass, FILTER_SANITIZE_STRING);
 
    if($old_pass == $empty_pass){
-      $message[] = 'please enter old password!';
+      $message[] = '¡ingrese su contraseña anterior!';
    }elseif($old_pass != $prev_pass){
-      $message[] = 'old password not matched!';
+      $message[] = '¡La contraseña anterior no coincide!';
    }elseif($new_pass != $confirm_pass){
-      $message[] = 'confirm password not matched!';
+      $message[] = '¡la contraseña no coincide!';
    }else{
       if($new_pass != $empty_pass){
          $update_admin_pass = $conn->prepare("UPDATE `admins` SET password = ? WHERE id = ?");
          $update_admin_pass->execute([$confirm_pass, $admin_id]);
-         $message[] = 'password updated successfully!';
+         $message[] = '¡Contraseña actualizada exitosamente!';
       }else{
-         $message[] = 'please enter a new password!';
+         $message[] = 'por favor ingrese una nueva contraseña!';
       }
    }
    
@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>update profile</title>
+   <title>actualización del perfil</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -67,13 +67,13 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form action="" method="post">
-      <h3>update profile</h3>
+      <h3>actualización del perfil</h3>
       <input type="hidden" name="prev_pass" value="<?= $fetch_profile['password']; ?>">
       <input type="text" name="name" value="<?= $fetch_profile['name']; ?>" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="old_pass" placeholder="enter old password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="new_pass" placeholder="enter new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="confirm_pass" placeholder="confirm new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="update now" class="btn" name="submit">
+      <input type="password" name="old_pass" placeholder="ingrese la contraseña anterior" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="new_pass" placeholder="Introduzca nueva contraseña" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="confirm_pass" placeholder="confirmar nueva contraseña" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="submit" value="actualizar" class="btn" name="submit">
    </form>
 
 </section>
