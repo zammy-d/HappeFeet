@@ -40,7 +40,7 @@ if(isset($_POST['update_qty'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>shopping cart</title>
+   <title>carrito</title>
    
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -55,7 +55,7 @@ if(isset($_POST['update_qty'])){
 
 <section class="products shopping-cart">
 
-   <h3 class="heading">shopping cart</h3>
+   <h3 class="heading">carrito de compras</h3>
 
    <div class="box-container">
 
@@ -83,16 +83,16 @@ if(isset($_POST['update_qty'])){
    $grand_total += $sub_total;
       }
    }else{
-      echo '<p class="empty">your cart is empty</p>';
+      echo '<p class="empty">Tu carrito esta vacío</p>';
    }
    ?>
    </div>
 
    <div class="cart-total">
-      <p>grand total : <span>$<?= $grand_total; ?>/-</span></p>
-      <a href="shop.php" class="option-btn">continue shopping</a>
-      <a href="cart.php?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from cart?');">delete all item</a>
-      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
+      <p>total : <span>$<?= $grand_total; ?>/-</span></p>
+      <a href="shop.php" class="option-btn">seguir comprando</a>
+      <a href="cart.php?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from cart?');">eliminar lista del carrito</a>
+      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">realizar pago</a>
    </div>
 
 </section>
