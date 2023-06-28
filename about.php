@@ -44,7 +44,7 @@ if(isset($_SESSION['user_id'])){
       <div class="content">
          <h3>¿Por qué comprar con nosotros?</h3>
          <p>HappyFeet, es una empresa de calzado, que está comprometida con sus clientes, siempre está lista para estar a la moda y con los mejores precios del mercado, haciendo que el cliente sienta que es por él y para él. que existimos.</p>
-         <a href="contact.php" class="btn">llamanos</a>
+         <a href="contact.php" class="btn">contactanos</a>
       </div>
 
    </div>
