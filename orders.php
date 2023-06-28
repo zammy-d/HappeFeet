@@ -18,7 +18,7 @@ if(isset($_SESSION['user_id'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>orders</title>
+   <title>ordenes</title>
    
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -33,13 +33,13 @@ if(isset($_SESSION['user_id'])){
 
 <section class="orders">
 
-   <h1 class="heading">placed orders</h1>
+   <h1 class="heading">pedidos realizados</h1>
 
    <div class="box-container">
 
    <?php
       if($user_id == ''){
-         echo '<p class="empty">please login to see your orders</p>';
+         echo '<p class="empty">Inicie sesión para ver sus pedidos</p>';
       }else{
          $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE user_id = ?");
          $select_orders->execute([$user_id]);
