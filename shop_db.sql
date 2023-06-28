@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 30, 2022 at 12:51 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 28-06-2023 a las 01:43:42
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,35 +18,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shop_db`
+-- Base de datos: `shop_db`
 --
-
+create database `shop_db`;
+use `shop_db`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
--- Estructura de la tabla para la tabla `admins`
+-- Estructura de tabla para la tabla `admins`
 --
 
 CREATE TABLE `admins` (
   `id` int(100) NOT NULL,
   `name` varchar(20) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admins`
 -- Volcado de datos para la tabla `admins`
 --
 
 INSERT INTO `admins` (`id`, `name`, `password`) VALUES
-(1, 'admin', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2');
+(1, 'admin', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2'),
+(4, 'zammy', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
--- Estructura de la tabla para la tabla `cart`
+-- Estructura de tabla para la tabla `cart`
 --
 
 CREATE TABLE `cart` (
@@ -57,12 +56,11 @@ CREATE TABLE `cart` (
   `price` int(10) NOT NULL,
   `quantity` int(10) NOT NULL,
   `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
 -- Estructura de tabla para la tabla `messages`
 --
 
@@ -73,13 +71,19 @@ CREATE TABLE `messages` (
   `email` varchar(100) NOT NULL,
   `number` varchar(12) NOT NULL,
   `message` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `messages`
+--
+
+INSERT INTO `messages` (`id`, `user_id`, `name`, `email`, `number`, `message`) VALUES
+(1, 0, 'prueba', 'pruebateeste@gmail.com', '123456789', 'El mensaje si llego.');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
--- Estructura de la tabla para la tabla `orders`
+-- Estructura de tabla para la tabla `orders`
 --
 
 CREATE TABLE `orders` (
@@ -94,13 +98,19 @@ CREATE TABLE `orders` (
   `total_price` int(100) NOT NULL,
   `placed_on` date NOT NULL DEFAULT current_timestamp(),
   `payment_status` varchar(20) NOT NULL DEFAULT 'pending'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
+(1, 1, 'prueba1', '12345679', 'prueba1@gmail.com', 'credit card', 'flat no. clle 16 # 25-25, clle 16 # 25-25, Bogota, cundinamarca, Colombia - 1234', 'Tenis-Walking-Azul-Navy-Blanco-Reebok-Stridium (185000 x 1) - ', 185000, '2023-06-25', 'pendiente');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
--- Estructura de la tabla para la tabla `productos`
+-- Estructura de tabla para la tabla `products`
 --
 
 CREATE TABLE `products` (
@@ -111,13 +121,19 @@ CREATE TABLE `products` (
   `image_01` varchar(100) NOT NULL,
   `image_02` varchar(100) NOT NULL,
   `image_03` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `details`, `price`, `image_01`, `image_02`, `image_03`) VALUES
+(1, 'Tenis-Walking-Azul-Navy-Blanco-Reebok-Stridium', 'Tenis-Walking-Azul-Navy-Blanco-Reebok-Stridium', 185000, 'reebok-2694-2930802-1-zoom.webp.crdownload', 'reebok-2696-2930802-2-zoom.webp.crdownload', 'reebok-2699-2930802-3-zoom.webp.crdownload');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
--- Estructura de la tabla para la tabla `usuarios`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -125,13 +141,19 @@ CREATE TABLE `users` (
   `name` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
+(1, 'zammyD', 'zammy@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
--- Estructura de la tabla para la tabla `lista de deseos`
+-- Estructura de tabla para la tabla `wishlist`
 --
 
 CREATE TABLE `wishlist` (
@@ -141,112 +163,96 @@ CREATE TABLE `wishlist` (
   `name` varchar(100) NOT NULL,
   `price` int(100) NOT NULL,
   `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
 -- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `admins`
--- Índices para la tabla `admins`
+-- Indices de la tabla `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cart`
--- Índices para la tabla `cart`
+-- Indices de la tabla `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `messages`
--- Índices para la tabla `mensajes`
+-- Indices de la tabla `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orders`
--- Índices para la tabla `orders`
+-- Indices de la tabla `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `products`
--- Índices para la tabla `productos`
+-- Indices de la tabla `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
--- Índices para la tabla `usuarios`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `wishlist`
--- Índices para la tabla `lista de deseos`
+-- Indices de la tabla `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
--- AUTO_INCREMENT para tablas volcadas
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `admins`
--- AUTO_INCREMENT para la tabla `admins`
+-- AUTO_INCREMENT de la tabla `admins`
 --
 ALTER TABLE `admins`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `cart`
+--
+ALTER TABLE `cart`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `cart`
--- AUTO_INCREMENT para la tabla `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `messages`
--- AUTO_INCREMENT para la tabla `mensajes`
+-- AUTO_INCREMENT de la tabla `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `orders`
--- AUTO_INCREMENT para la tabla `orders`
+-- AUTO_INCREMENT de la tabla `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `products`
--- AUTO_INCREMENT para la tabla `productos`
+-- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `users`
--- AUTO_INCREMENT para la tabla `usuarios`
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `wishlist`
--- AUTO_INCREMENT para la tabla `lista de deseos`
+-- AUTO_INCREMENT de la tabla `wishlist`
 --
 ALTER TABLE `wishlist`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
