@@ -121,31 +121,31 @@ if(isset($_POST['order'])){
          </div>
          <div class="inputBox">
             <span>direccion :</span>
-            <input type="text" name="flat" placeholder="e.g. flat number" class="box" maxlength="50" required>
+            <input type="text" name="flat" placeholder="ingresa tu direccion" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
             <span>direccion altena :</span>
-            <input type="text" name="street" placeholder="e.g. street name" class="box" maxlength="50">
+            <input type="text" name="street" placeholder="ingresa una direccion alterna (obligatorio)" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
-            <span>city :</span>
-            <input type="text" name="barrio" placeholder="e.g. mumbai" class="box" maxlength="50" required>
+            <span>barrio :</span>
+            <input type="text" name="barrio" placeholder="ingresa tu barrio" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
-            <span>state :</span>
-            <input type="text" name="ciudad" placeholder="e.g. maharashtra" class="box" maxlength="50" required>
+            <span>ciudad :</span>
+            <input type="text" name="ciudad" placeholder="ingresa tu ciudad" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
-            <span>country :</span>
-            <input type="text" name="departamento" placeholder="e.g. India" class="box" maxlength="50" required>
+            <span>departamento :</span>
+            <input type="text" name="departamento" placeholder="ingresa tu departamento" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
-            <span>pin code :</span>
-            <input type="number" min="0" name="codigo postal" placeholder="e.g. 123456" min="0" max="999999" onkeypress="if(this.value.length == 6) return false;" class="box" required>
+            <span>pin codigo postal :</span>
+            <input type="number" min="0" name="codigo postal" placeholder="ingresa tu codigo postal" min="0" max="999999" onkeypress="if(this.value.length == 6) return false;" class="box" required>
          </div>
       </div>
 
-      <input type="submit" name="orden" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>" value="place order">
+      <input type="submit" name="orden" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>" value="realizar pedido">
 
    </form>
 
