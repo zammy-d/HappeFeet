@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
       $_SESSION['user_id'] = $row['id'];
       header('location:home.php');
    }else{
-      $message[] = 'incorrect username or password!';
+      $message[] = '¡Nombre de usuario o contraseña incorrecta!';
    }
 
 }
@@ -54,12 +54,12 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form action="" method="post">
-      <h3>login now</h3>
-      <input type="email" name="email" required placeholder="enter your email" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="login now" class="btn" name="submit">
-      <p>don't have an account?</p>
-      <a href="user_register.php" class="option-btn">register now</a>
+      <h3>login </h3>
+      <input type="email" name="email" required placeholder="ingresa tu correo" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="pass" required placeholder="ingresa tu clave" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="submit" value="ingresar" class="btn" name="submit">
+      <p>¿no tienes una cuenta?</p>
+      <a href="user_register.php" class="option-btn">registrate</a>
    </form>
 
 </section>
