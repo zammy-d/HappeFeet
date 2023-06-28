@@ -55,7 +55,7 @@
             <a href="user_register.php" class="option-btn">registrar</a>
             <a href="user_login.php" class="option-btn">iniciar sesion</a>
          </div>
-         <a href="components/user_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">logout</a> 
+         <a href="components/user_logout.php" class="delete-btn" onclick="return confirm('¿cerrar sesión en el sitio web?');">cerrar sesión</a> 
          <?php
             }else{
          ?>
