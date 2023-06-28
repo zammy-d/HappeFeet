@@ -15,7 +15,7 @@
 
    <section class="flex">
 
-      <a href="home.php" class="logo">HappyFeet<span>.</span></a>
+      <a href="index.php" class="logo">HappyFeet<span>.</span></a>
 
       <nav class="navbar">
          <a href="index.php">inicio</a>
