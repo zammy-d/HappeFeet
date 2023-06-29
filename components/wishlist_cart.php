@@ -24,7 +24,7 @@ if(isset($_POST['add_to_wishlist'])){
       if($check_wishlist_numbers->rowCount() > 0){
          $message[] = 'already added to wishlist!';
       }elseif($check_cart_numbers->rowCount() > 0){
-         $message[] = 'already added to cart!';
+         $message[] = '¡agregado al carrito!';
       }else{
          $insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES(?,?,?,?,?)");
          $insert_wishlist->execute([$user_id, $pid, $name, $price, $image]);
@@ -56,7 +56,7 @@ if(isset($_POST['add_to_cart'])){
       $check_cart_numbers->execute([$name, $user_id]);
 
       if($check_cart_numbers->rowCount() > 0){
-         $message[] = 'already added to cart!';
+         $message[] = '¡agregado al carrito!';
       }else{
 
          $check_wishlist_numbers = $conn->prepare("SELECT * FROM `wishlist` WHERE name = ? AND user_id = ?");

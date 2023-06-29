@@ -36,6 +36,6 @@
 
    </section>
 
-   <div class="credit">&copy; copyright @ <?= date('Y'); ?> by <span>Agradecimientos al instructor Albeiro </span> | todos los derechos reservados!</div>
+   <div class="credit">&copy; copyright @ <?= date('Y'); ?> <span> </span> | todos los derechos reservados!</div>
 
 </footer>

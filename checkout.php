@@ -1,19 +1,21 @@
 <?php
+// establece una conexión con la base de datos
 
 include 'components/connect.php';
-
+// necesario para almacenar y acceder a las variables de sesión.
 session_start();
-
+// Se verifica si el ID de usuario está presente en la variable de sesión
 if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
    header('location:user_login.php');
 };
-
+//  verifica si el formulario ha sido enviado mediante el botón
 if(isset($_POST['order'])){
-
+   // filtran y se asignan a variables utilizando
    $name = $_POST['name'];
+   // verifica que no tenga caracteres maliciosos
    $name = filter_var($name, FILTER_SANITIZE_STRING);
    $number = $_POST['number'];
    $number = filter_var($number, FILTER_SANITIZE_STRING);
@@ -21,7 +23,7 @@ if(isset($_POST['order'])){
    $email = filter_var($email, FILTER_SANITIZE_STRING);
    $method = $_POST['method'];
    $method = filter_var($method, FILTER_SANITIZE_STRING);
-   $address = 'flat no. '. $_POST['flat'] .', '. $_POST['street'] .', '. $_POST['city'] .', '. $_POST['state'] .', '. $_POST['country'] .' - '. $_POST['pin_code'];
+   $address =$_POST['flat'] .', '. $_POST['street'] .', '. $_POST['city'] .', '. $_POST['state'] .', '. $_POST['country'] .' - '. $_POST['pin_code'];
    $address = filter_var($address, FILTER_SANITIZE_STRING);
    $total_products = $_POST['total_products'];
    $total_price = $_POST['total_price'];
@@ -39,7 +41,7 @@ if(isset($_POST['order'])){
 
       $message[] = '¡pedido realizado con éxito!';
    }else{
-      $message[] = 'your cart is empty';
+      $message[] = 'Tu carrito esta vacío';
    }
 
 }
@@ -52,12 +54,12 @@ if(isset($_POST['order'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>checkout</title>
+   <title>verificar</title>
    
-   <!-- font awesome cdn link  -->
+   <!-- fuente link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-   <!-- custom css file link  -->
+   <!-- enlace de archivo css personalizado  -->
    <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -95,7 +97,7 @@ if(isset($_POST['order'])){
          <div class="grand-total">total : <span>$<?= $grand_total; ?>/-</span></div>
       </div>
 
-      <h3>place your orders</h3>
+      <h3>Realiza tu pedido</h3>
 
       <div class="flex">
          <div class="inputBox">
@@ -108,7 +110,7 @@ if(isset($_POST['order'])){
          </div>
          <div class="inputBox">
             <span>correo :</span>
-            <input type="email" name="email" placeholder="eingresa tu correo" class="box" maxlength="50" required>
+            <input type="email" name="email" placeholder="ingresa tu correo" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
             <span>metodo de pago :</span>
@@ -124,20 +126,20 @@ if(isset($_POST['order'])){
             <input type="text" name="flat" placeholder="ingresa tu direccion" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
-            <span>direccion alternativa :</span>
-            <input type="text" name="street" placeholder="ingresa tu direccion alterna" class="box" maxlength="50" required>
+            <span>barrio :</span>
+            <input type="text" name="street" placeholder="ingresa tu barrio" class="box" maxlength="50" required>
+         </div>
+         <div class="inputBox">
+            <span>localidad :</span>
+            <input type="text" name="city" placeholder="ingresa tu localidad" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
             <span>ciudad :</span>
-            <input type="text" name="city" placeholder="ingresa tu ciudad de residencia" class="box" maxlength="50" required>
-         </div>
-         <div class="inputBox">
-            <span>barrio :</span>
-            <input type="text" name="state" placeholder="ingresa tu barrio" class="box" maxlength="50" required>
+            <input type="text" name="state" placeholder="ciudad" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
             <span>pais :</span>
-            <input type="text" name="country" placeholder="ingresa tu pais de residensia" class="box" maxlength="50" required>
+            <input type="text" name="country" placeholder="ingresa tu pais" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
             <span>codigo postal :</span>
